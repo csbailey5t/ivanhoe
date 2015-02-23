@@ -164,6 +164,11 @@ img {
     background: darken(#34612D, 10%);
 }
 
+#all-sources {
+    height: 200px;
+    overflow: auto;
+}
+
 .return-button{
     text-align: right;
 }

@@ -455,6 +455,8 @@ abstract class BasePostForm
     {
         $title = htmlspecialchars($this->title);
 
+        $this->render_sources();
+
         echo '<form action="" class="new-ivanhoe-form" '
             . 'method="post" enctype="multipart/form-data">';
 
@@ -509,6 +511,17 @@ abstract class BasePostForm
      * @author Eric Rochester <erochest@virginia.edu>
      */
     public function render_rationale()
+    {
+        return;
+    }
+
+    /**
+     * This displays the sources for the move .
+     *
+     * @return string
+     * @author Scott Bailey
+     */
+    public function render_sources()
     {
         return;
     }

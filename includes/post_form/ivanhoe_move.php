@@ -32,6 +32,24 @@ class IvanhoeMove extends BasePostForm
         echo "</div>";
     }
 
+    public function render_sources()
+    {
+        echo "<h3>You are responding to the following moves:</h3>";
+        echo "<div id='all-sources'>";
+        if ($this->move_source) {
+            foreach ($this->move_source as $move) {
+                $title = get_the_title($move);
+                $content_post = get_post($move);
+                $content = $content_post->post_content;
+                $content = apply_filters('the_content', $content);
+                $buffer = "<h4>Post title: " . $title . "</h4>";
+                $buffer .=  $content;
+                echo $buffer;
+            }
+        }
+        echo "</div>";
+    }
+
     public function get_move_source_message($game)
     {
         $buffer = sprintf(
@@ -61,6 +79,7 @@ class IvanhoeMove extends BasePostForm
 
         return $buffer;
     }
+
 }
 
 
