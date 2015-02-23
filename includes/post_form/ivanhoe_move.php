@@ -61,6 +61,22 @@ class IvanhoeMove extends BasePostForm
 
         return $buffer;
     }
+
+    public function get_footer()
+    {
+        get_footer();
+        $this->add_vex_trigger();
+    }
+
+    public function add_vex_content()
+    {
+        echo "Here is some added footer text";
+    }
+
+    public function add_vex_trigger()
+    {
+        add_action('wp_footer', $this->add_vex_content, 25);
+    }
 }
 
 

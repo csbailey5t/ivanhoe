@@ -19,6 +19,37 @@ function add_infinite_scroll_script ()
 
 add_action('wp_enqueue_scripts', 'add_infinite_scroll_script');
 
+//Queue vex modal library
+function add_vex_script ()
+{
+    wp_enqueue_script(
+        'vex.combined',
+        get_template_directory_uri() . '/javascripts/vex/js/vex.combined.min.js',
+        array('jquery'),
+        null,
+        true
+        );
+
+    wp_enqueue_style(
+        'vex.css',
+        get_template_directory_uri() . '/javascripts/vex/css/vex.css',
+        array(),
+        null,
+        all
+    );
+
+    wp_enqueue_style(
+        'vex-theme-os.css',
+        get_template_directory_uri() . '/javascripts/vex/css/vex-theme-os.css',
+        array(),
+        null,
+        all
+    );
+
+}
+
+add_action('wp_enqueue_scripts', 'add_vex_script');
+
 /**
  * Custom backgrounds.
  */
