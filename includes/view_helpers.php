@@ -272,3 +272,16 @@ function ivanhoe_get_rationales($post=null)
 
     return $html;
 }
+
+/**
+ * Runs vex javascript - to be called only on make a move page
+ *
+ * @param
+ * @author Scott Bailey
+ *
+ */
+function add_vex()
+{
+    echo "<script>vex.defaultOptions.className = 'vex-theme-os'</script>";
+}
+

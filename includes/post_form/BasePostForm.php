@@ -442,8 +442,15 @@ abstract class BasePostForm
      */
     public function get_footer()
     {
+        $this->form_footer();
         get_footer();
     }
+
+    public function form_footer()
+    {
+        return;
+    }
+
 
     /**
      * This renders the form element.

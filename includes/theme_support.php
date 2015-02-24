@@ -35,7 +35,7 @@ function add_vex_script ()
         get_template_directory_uri() . '/javascripts/vex/css/vex.css',
         array(),
         null,
-        all
+        'all'
     );
 
     wp_enqueue_style(
@@ -43,7 +43,7 @@ function add_vex_script ()
         get_template_directory_uri() . '/javascripts/vex/css/vex-theme-os.css',
         array(),
         null,
-        all
+        'all'
     );
 
 }
