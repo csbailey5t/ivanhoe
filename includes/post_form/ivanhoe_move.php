@@ -50,7 +50,7 @@ class IvanhoeMove extends BasePostForm
             foreach ($this->move_source as $move) {
                 $link  = get_permalink($move);
                 $title = get_the_title($move);
-                $buffer .= "<li><a href='$link'>$title</a></li>";
+                $buffer .= "<li><a href='#' class='clickthis'>$title<div class='nope'>$title</div></a></li>";
             }
 
             $buffer .= "</ul>";
@@ -60,6 +60,23 @@ class IvanhoeMove extends BasePostForm
         }
 
         return $buffer;
+    }
+
+    public function vex_content()
+    {
+        echo "<div id='all-sources'>";
+        if ($this->move_source) {
+            foreach ($this->move_source as $move ) {
+                $title = get_the_title($move);
+                $content_post = get_post($move);
+                $content = $content_post->post_content;
+                $content = apply_filters('the_content', $content);
+                $buffer = "<h4>Post title: " . $title . "</h4>";
+                $buffer .= $content;
+                echo $buffer;
+            }
+            echo "</div>";
+        }
     }
 
     public function form_footer()

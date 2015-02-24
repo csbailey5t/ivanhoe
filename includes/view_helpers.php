@@ -282,6 +282,9 @@ function ivanhoe_get_rationales($post=null)
  */
 function add_vex()
 {
-    echo "<script>vex.defaultOptions.className = 'vex-theme-os'</script>";
+    //use toggleclass?
+    echo "<script>vex.defaultOptions.className = 'vex-theme-os'; var clickit = $('.clickthis'); clickit.click(function(e){e.preventDefault(); vex.open({content: '<h1>Post Title</h1>";
+    echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'});});</script>";
+    // echo "<script>vex.defaultOptions.className = 'vex-theme-os'; var clickit = $('.clickthis'); clickit.click(function(e){e.preventDefault(); var content = $(this).children('div');content.css('display', 'block'); vex.open({});});</script>";
 }
 

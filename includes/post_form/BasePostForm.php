@@ -446,6 +446,12 @@ abstract class BasePostForm
         get_footer();
     }
 
+    /**
+     * This accepts extra footer functionality from the form pages
+     *
+     * @author Scott Bailey
+     */
+
     public function form_footer()
     {
         return;
@@ -482,6 +488,8 @@ abstract class BasePostForm
             . __( 'Save', 'ivanhoe' ) . '">';
 
         echo '</form>';
+
+        $this->vex_content();
     }
 
     /**
@@ -517,6 +525,15 @@ abstract class BasePostForm
      */
     public function render_rationale()
     {
+        return;
+    }
+
+    /**
+     * This generates the content for vex dialog boxes
+     *
+     * @author Scott Bailey
+     */
+    public function vex_content(){
         return;
     }
 }
